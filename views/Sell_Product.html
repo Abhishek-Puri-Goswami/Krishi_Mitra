@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra</title>
+    <link rel="stylesheet" href="../public/stylesheet/Sell_Product.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Upload Your Product</h1>
+            <button onclick="goBack()">← Back</button>
+        </header>
+
+        <form id="productForm">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="name" placeholder="e.g., Organic Tomatoes" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productCategory">Product Category:</label>
+                <select id="productCategory" name="category" required>
+                    <option value="">Select Category</option>
+                    <option value="Vegetables">Vegetables</option>
+                    <option value="Fruits">Fruits</option>
+                    <option value="Grains">Grains</option>
+                    <option value="Dairy">Dairy</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" placeholder="Describe your product..."
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity Available (kg):</label>
+                <input type="number" id="quantity" name="quantity" placeholder="e.g., 25" min="1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price per Unit (&#8377; / kg):</label>
+                <input type="number" id="price" name="price" placeholder="e.g., 100" min="0" required>
+            </div>
+
+            <div class="form-group">
+                <label for="images">Upload Images:</label>
+                <input type="file" id="images" name="images" multiple accept="image/*" required>
+                <div id="imagePreview"></div>
+                <small>Upload clear images of your product to attract buyers.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="farmLocation">Farm Location:</label>
+                <input type="text" id="farmLocation" name="location" placeholder="e.g., Village Name, District"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label>Delivery Options:</label>
+                <div class="form-group">
+                    <input type="checkbox" id="pickup" value="Pickup" onchange="togglePickup()">
+                    <label for="pickup">Available for Pickup</label>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" id="delivery" name="deliveryOption" value="Delivery"
+                        onchange="toggleDelivery()">
+                    <label for="delivery">Delivery Available (Specify Distance)</label>
+                    <div id="deliveryOptions" class="hidden form-group">
+                        <div class="form-group">
+
+                            <label for="deliveryDistance">Maximum Delivery Distance (km):</label>
+                            <input type="number" id="deliveryDistance" name="deliveryDistance" placeholder="e.g., 10"
+                                min="1">
+                        </div>
+                        <div>
+
+                            <label for="deliveryFee">Delivery Fee (&#8377;):</label>
+                            <input type="number" id="deliveryFee" name="deliveryFee" placeholder="e.g., 100" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox" id="localMarket" value="Local Market">
+                    <label for="localMarket">Local Market Availability</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" id="organic" value="Organic">
+                <label for="organic">Certified Organic (if applicable)</label>
+            </div>
+
+            <div class="form-group">
+                <label for="specialNotes">Special Notes:</label>
+                <textarea id="specialNotes" placeholder="Any additional information..."></textarea>
+            </div>
+
+            <button type="submit">Submit Product</button>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <p>Your product has been successfully uploaded!</p>
+            <button onclick="uploadAnother()">Upload Another Product</button>
+            <button onclick="goToMyListings()">Go to My Listings</button>
+        </div>
+    </div>
+
+    <script src="../public/javascript/Sell_Product.js"></script>
+</body>
+
+</html>
