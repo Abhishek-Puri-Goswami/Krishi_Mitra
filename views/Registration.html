@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/stylesheet/Registration.css">
+    <title>Farmer Registration Form</title>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form>
+    
+          <!-- Name -->
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+    
+          <!-- Address -->
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="3" required></textarea>
+          </div>
+    
+          <!-- eKYC -->
+          <div class="form-group">
+            <label for="aadhaar">Aadhaar Number:</label>
+            <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="kyc-file">Upload Aadhaar/ID Proof:</label>
+            <input type="file" id="kyc-file" name="kyc-file" class="file-upload" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="otp">OTP Verification:</label>
+            <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter OTP" />
+            <button type="button">Send OTP</button>
+          </div>
+    
+          <!-- Role -->
+          <div class="form-group">
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+              <option value="">-- Select Role --</option>
+              <option value="farmer">Farmer</option>
+              <option value="retailer">Retailer</option>
+              <option value="consumer">Consumer</option>
+              <option value="wholesaler">Wholesaler</option>
+            </select>
+          </div>
+    
+          <!-- Bank Details -->
+          <div class="form-group">
+            <label for="account-name">Account Holder Name(Optional):</label>
+            <input type="text" id="account-name" name="account-name" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="bank-name">Bank Name(Optional):</label>
+            <input type="text" id="bank-name" name="bank-name" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="account-number">Account Number(Optional):</label>
+            <input type="text" id="account-number" name="account-number" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="ifsc">IFSC Code(Optional):</label>
+            <input type="text" id="ifsc" name="ifsc" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="upi">UPI ID (Optional):</label>
+            <input type="text" id="upi" name="upi" />
+          </div>
+    
+          <!-- Email -->
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+    
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+          </div>
+    
+          <div class="form-group">
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required />
+          </div>
+    
+          <!-- Submit -->
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Register</button>
+          </div>
+    
+        </form>
+    </div>
+</body>
+</html>
