@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="stylesheet/SignUp.css">
+  <title>KrishiMitra</title>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Sign Up</h2>
+    <form method="POST" action="/signup" enctype="multipart/form-data">
+
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="3" required></textarea>
+      </div>
+
+      <!-- eKYC -->
+      <div class="form-group">
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="text" id="aadhaar" name="aadhaar" pattern="\d{12}" maxlength="12" required />
+      </div>
+
+      <div class="form-group">
+        <label for="aadharImg">Upload Aadhaar:</label>
+        <input type="file" id="aadharImg" name="aadharImg" class="imgUpload" required />
+      </div>
+
+      <div class="form-group">
+        <label for="otp">OTP Verification:</label>
+        <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter OTP" />
+        <button type="button">Send OTP</button>
+      </div>
+
+      <!-- Role -->
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <select id="role" name="role" required>
+          <option value="">-- Select Role --</option>
+          <option value="farmer">Farmer</option>
+          <option value="retailer">Retailer</option>
+          <option value="consumer">Consumer</option>
+          <option value="wholesaler">Wholesaler</option>
+        </select>
+      </div>
+
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <!-- Password -->
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required />
+      </div>
+
+      <!-- Bank Details  -->
+      <div class="form-group">
+        <label for="account-name">Account Holder Name(Optional):</label>
+        <input type="text" id="accountName" name="accountName" />
+      </div>
+
+      <div class="form-group">
+        <label for="bankName">Bank Name(Optional):</label>
+        <input type="text" id="bankName" name="bankName" />
+      </div>
+
+      <div class="form-group">
+        <label for="accountNumber">Account Number(Optional):</label>
+        <input type="text" id="accountNumber" name="accountNumber" />
+      </div>
+
+      <div class="form-group">
+        <label for="ifsc">IFSC Code(Optional):</label>
+        <input type="text" id="ifsc" name="ifsc" />
+      </div>
+
+      <div class="form-group">
+        <label for="upi">UPI ID (Optional):</label>
+        <input type="text" id="upi" name="upi" />
+      </div>
+
+      <!-- Submit -->
+      <div class="form-group">
+        <button type="submit" id="submitBtn">Sign Up</button>
+      </div>
+
+    </form>
+  </div>
+
+  <script src="javascript/SignUp.js"></script>
+</body>
+
+</html>
