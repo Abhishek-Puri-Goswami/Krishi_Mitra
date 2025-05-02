@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="../public/stylesheet/Login.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="Login.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <script src="login.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="form-box">
-            <h1 class="title">Sign Up</h1>
-            <div class="underline"></div>
-            <form>
-                <div class="input-group">
-
-                    <div class="input-field namefield">
-                        <i class="fa-solid fa-user"></i>
-                        <input type="text" placeholder="Name">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-at"></i>
-                        <input type="email" placeholder="Email">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa-solid fa-key"></i>
-                        <input type="password" placeholder="Password">
-                    </div>
-                    <p><span class="text"></span><a href="#"></a></p>
-                </div>
-                <div class="btn-field">
-                    <button type="button" class="signUpbtn">Sign Up</button>
-                    <button type="button" class="disable signInbtn">Sign In</button>
-                </div>
-            </form>
+  <div class="container">
+    <div class="form-box">
+      <h1 class="title">Login</h1>
+      <div class="underline"></div>
+      <form>
+        <div class="input-group">
+          <div class="input-field">
+            <i class="fa-solid fa-at"></i>
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-key"></i>
+            <input type="password" placeholder="Password" required />
+          </div>
+          <div class="input-field">
+            <i class="fa-solid fa-user-tag"></i>
+            <label for="role" class="visually-hidden">Select Role</label>
+            <select name="role" id="role" required>
+              <option value="" disabled selected>Select Role</option>
+              <option value="farmer">Farmer</option>
+              <option value="buyer">Buyer</option>
+            </select>
+          </div>              
+          <p>
+            <span class="text">Forgot Password?</span>
+            <a href="#">Click Here!</a>
+          </p>
         </div>
+        <div class="btn-field">
+          <button type="submit" class="signInbtn">Login</button>
+        </div>
+        <!-- <p class="switch-link">Don't have an account? <a href="signup.html">Sign Up</a></p> -->
+      </form>
     </div>
-    <script src="../public/javascript/Login.js" defer></script>
+  </div>
 </body>
 </html>
