@@ -11,7 +11,7 @@
 <body>
   <div class="form-container">
     <h2>Sign Up</h2>
-    <form method="POST" action="/signup" enctype="multipart/form-data">
+    <form method="POST" action="/user/signup" enctype="multipart/form-data">
 
       <!-- Name -->
       <div class="form-group">
@@ -36,11 +36,11 @@
         <input type="file" id="aadharImg" name="aadharImg" class="imgUpload" required />
       </div>
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="otp">OTP Verification:</label>
         <input type="text" id="otp" name="otp" maxlength="6" placeholder="Enter OTP" />
         <button type="button">Send OTP</button>
-      </div>
+      </div> -->
 
       <!-- Role -->
       <div class="form-group">
@@ -61,6 +61,11 @@
         <input type="email" id="email" name="email" required />
       </div>
 
+      <div class="form-group">
+        <label for="phone">Email Address:</label>
+        <input type="number" id="phone" name="phone" required />
+      </div>
+
       <!-- Password -->
       <div class="form-group">
         <label for="password">Password:</label>
@@ -73,30 +78,30 @@
       </div>
 
       <!-- Bank Details  -->
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="account-name">Account Holder Name(Optional):</label>
         <input type="text" id="accountName" name="accountName" />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="bankName">Bank Name(Optional):</label>
         <input type="text" id="bankName" name="bankName" />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="accountNumber">Account Number(Optional):</label>
         <input type="text" id="accountNumber" name="accountNumber" />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="ifsc">IFSC Code(Optional):</label>
         <input type="text" id="ifsc" name="ifsc" />
-      </div>
+      </div> -->
 
-      <div class="form-group">
+      <!-- <div class="form-group">
         <label for="upi">UPI ID (Optional):</label>
         <input type="text" id="upi" name="upi" />
-      </div>
+      </div> -->
 
       <!-- Submit -->
       <div class="form-group">
