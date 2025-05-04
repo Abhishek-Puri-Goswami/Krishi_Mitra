@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
 const { model } = mongoose; 
 
 const userSchema = new mongoose.Schema({
@@ -11,26 +10,35 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
-        validate: [validator.isEmail, 'Invalid email format'],
     },
       phone: {
         type: String,
         required: true,
         unique: true,
-        validate: [validator.isMobilePhone, 'Invalid phone number format'],
       },
       aadharno:{
         type:String,
         unique:true,
         require:true,
       },
+      aadharImg:{
+        type:String,
+        require:true,
+      },
       address:{
         type:String,
         require:true,
       },
+      role: {
+        type: String,
+      },
+      password: {
+        type: String,
+        required: true,
+      },
       
 }, { timestamps: true }); 
 
-userSchema.plugin(plm);
+const userModel = mongoose.model('User', userSchema);
 
-module.exports = model('User', userSchema);
+module.exports = userModel;
