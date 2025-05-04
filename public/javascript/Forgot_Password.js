@@ -34,7 +34,7 @@ document.querySelector(".submit-btn").addEventListener("click", () => {
   let otp = "";
   inputs.forEach((input) => (otp += input.value));
   if (otp.length === 6) {
-    fetch("/api/verify-otp", {
+    fetch("/user/otp", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

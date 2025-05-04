@@ -15,5 +15,9 @@ router.get("/", (req, res) => {
     res.render("login.ejs");
   });
 
+  router.get("/otp", (req, res) => {
+    res.render("Forgot_Password.ejs");
+  });
+
 
 module.exports=router;
