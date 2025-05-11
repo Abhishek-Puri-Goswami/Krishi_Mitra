@@ -13,34 +13,41 @@
 </head>
 
 <body>
-    <body>
-        <div class="container">
-            <div class="form-box">
-                <h1 class="title">Sign Up</h1>
-                <div class="underline"></div>
-                <form method="POST" action="/user/login">
-                    <div class="input-group">
-                        <div class="input-field namefield">
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" name="name" placeholder="Name" required>
-                        </div>
-                        <div class="input-field">
-                            <i class="fa-solid fa-at"></i>
-                            <input type="email" name="email" placeholder="Email" required>
-                        </div>
-                        <div class="input-field">
-                            <i class="fa-solid fa-key"></i>
-                            <input type="password" name="password" placeholder="Password" required>
-                        </div>
-                        <p><span class="text">Already have an account? </span><a href="/login">Login here</a></p>
-                    </div>
-                    <div class="btn-field">
-                        <button type="submit" class="signUpbtn">Login</button>
-                    </div>
-                </form>
+    <div class="container">
+        <div class="form-box">
+          <h1 class="title">Login</h1>
+          <div class="underline"></div>
+          <form>
+            <div class="input-group">
+              <div class="input-field">
+                <i class="fa-solid fa-at"></i>
+                <input type="email" placeholder="Email" required />
+              </div>
+              <div class="input-field">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" placeholder="Password" required />
+              </div>
+              <div class="input-field">
+                <i class="fa-solid fa-user-tag"></i>
+                <label for="role" class="visually-hidden">Select Role</label>
+                <select name="role" id="role" required>
+                  <option value="" disabled selected>Select Role</option>
+                  <option value="farmer">Farmer</option>
+                  <option value="buyer">Buyer</option>
+                </select>
+              </div>              
+              <p>
+                <span class="text">Forgot Password?</span>
+                <a href="#">Click Here!</a>
+              </p>
             </div>
+            <div class="btn-field">
+              <button type="submit" class="signInbtn">Login</button>
+            </div>
+            <p class="switch-link">Don't have an account? <a href="#">Sign Up</a></p>
+          </form>
         </div>
-    </body>
+      </div>
     </body>
 
 </html>
