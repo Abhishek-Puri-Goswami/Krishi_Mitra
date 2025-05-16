@@ -12,12 +12,18 @@ router.get("/", (req, res) => {
 
 
   router.get("/login", (req, res) => {
-    res.render("login.ejs");
+    res.render("Login.ejs");
+  });
+  
+
+  router.get("/sell", (req, res) => {
+    res.render("Sell_Product.ejs");
   });
 
-  router.get("/otp", (req, res) => {
-    res.render("Forgot_Password.ejs");
+  
+   router.get("/email", (req, res) => {
+    res.render("Email_verification.ejs");
   });
-
+  
 
 module.exports=router;

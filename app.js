@@ -20,6 +20,8 @@ app.use(express.urlencoded({ extended: true }));
 //   res.send("Testing phase");
 // });
 
+//mvc
+
 
 app.use('/user',Register);
 app.use('/',pages)

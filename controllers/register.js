@@ -14,7 +14,7 @@ module.exports.register = async (req, res) => {
        });
  
        imageUrl = result.secure_url;
-       console.log('Image URL:', imageUrl);
+  
        fs.unlinkSync(req.file.path);
 
        const hashedPassword = await bcrypt.hash(req.body.password, 10);
