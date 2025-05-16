@@ -3,8 +3,9 @@ const app = express();
 const dotenv = require("dotenv");
 const path = require("path");
 const db = require("./config/db");
-let Register=require("./routes/register");
-let pages=require("./routes/pages");
+let Register = require("./routes/register");
+let pages = require("./routes/pages");
+let Product = require("./routes/product");
 
 dotenv.config();
 
@@ -20,9 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 //   res.send("Testing phase");
 // });
 
-
-app.use('/user',Register);
-app.use('/',pages)
+app.use("/product", Product);
+app.use("/user", Register);
+app.use("/", pages);
 
 app.listen(process.env.port, () => {
   console.log("Server is running");
