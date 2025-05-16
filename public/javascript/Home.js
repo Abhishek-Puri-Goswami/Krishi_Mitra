@@ -15,11 +15,10 @@ window.addEventListener("load", () => {
   typeWriter();
 });
 
-document.querySelector("#login").onclick = () => {
-  window.location.href = "Login.html";
-};
+document.getElementById("signup").addEventListener("click", function () {
+  window.location.href = "/user/signup";
+});
 
-document.querySelector("#signup").onclick = () => {
-  window.location.href = "Register.html";
-};
-
+document.getElementById("login").addEventListener("click", function () {
+  window.location.href = "/user/login";
+});
