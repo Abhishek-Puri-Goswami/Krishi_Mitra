@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Sell</title>
+    <link rel="stylesheet" href="/stylesheet/Shopkeeper.css">
+</head>
+<body>
+    <div class="container">
+    <header>
+       <h1>Request Product from Farmers</h1>
+       <button onclick="goBack()">← Back</button>
+    </header>
+
+    <form id="requestForm" action="/shopkeeper/request" method="POST">
+      <div class="form-group">
+        <label for="shopName">Shop Name:</label>
+        <input type="text" id="shopName" name="shopName" placeholder="e.g., GreenMart" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productType">Product Name:</label>
+        <input type="text" id="productType" name="productType" placeholder="e.g., Organic Onions" required>
+      </div>
+
+      <div class="form-group">
+        <label for="category">Product Category:</label>
+        <select id="category" name="category" required>
+           <option value="">Select Category</option>
+           <option value="Vegetables">Vegetables</option>
+           <option value="Fruits">Fruits</option>
+           <option value="Grains">Grains</option>
+           <option value="Dairy">Dairy</option>
+           <option value="Others">Others</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="requiredQuantity">Quantity Needed (kg):</label>
+        <input type="number" id="requiredQuantity" name="requiredQuantity" min="1" placeholder="e.g., 100" required>
+      </div>
+
+      <div class="form-group">
+        <label for="expectedPrice">Expected Price (&#8377;/kg):</label>
+        <input type="number" id="expectedPrice" name="expectedPrice" min="0" placeholder="e.g., 80" required>
+      </div>
+
+      <div class="form-group">
+        <label for="referenceImage">Upload Reference Image:</label>
+        <input type="file" id="referenceImage" name="referenceImage" accept="image/*">
+        <div id="imagePreview"></div>
+        <small>Upload an image for better understanding of your requirement (optional).</small>
+      </div>
+
+      <div class="form-group">
+         <label for="contactInfo">Contact Information:</label>
+         <input type="text" id="contactInfo" name="contactInfo" placeholder="Phone number or email" required>
+      </div>
+
+      <div class="form-group">
+         <label for="notes">Additional Notes:</label>
+         <textarea id="notes" name="notes" placeholder="Any delivery timing or quality preferences..."></textarea>
+      </div>
+
+      <button type="submit" id="submitRequest">Submit Request</button>
+    </form>
+
+      <div id="confirmationMessage" class="hidden">
+        <p>Your request has been sent to farmers!</p>
+        <button onclick="submitAnother()">Submit Another Request</button>
+        <button onclick="goToRequests()">View My Requests</button>
+      </div>
+    </div>
+
+    <script src="/javascript/Shopkeeper.js" ></script>
+
+</body>
+</html>
