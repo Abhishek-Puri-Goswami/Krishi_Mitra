@@ -17,9 +17,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
 
-// app.get("/", (req, res) => {
-//   res.send("Testing phase");
-// });
 
 app.use("/product", Product);
 app.use("/user", Register);

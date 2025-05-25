@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiMitra Dashboard</title>
+    <link rel="stylesheet" href="/stylesheet/Dashboard.css">
+</head>
+
+<body>
+    <header class="dashboard-header">
+        <div class="header-container">
+            <div class="logo">
+                <h1>KrishiMitra</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">Advisory</a></li>
+                <li><a href="#">Market Prices</a></li>
+                <li><a href="#">Weather</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Chat</a></li>
+                <li><a href="#">Cart</a></li>
+            </ul>
+            <div class="profile-section">
+                <img src="/images/Logo.png" alt="Profile" class="profile-pic" id="profileToggle">
+                <div class="profile-dropdown" id="profileDropdown">
+                    <button class="dropdown-toggle" id="profileToggleBtn">Farmer Name ⌄</button>
+                    <div class="dropdown-menu" id="dropdownMenu">
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main class="dashboard-main">
+        <section class="card">
+            <h2>Crop Advisory</h2>
+            <p>Get personalized crop suggestions and tips.</p>
+            <button onclick="showMessage('Advisory')">Explore</button>
+        </section>
+        <section class="card">
+            <h2>Live Market Prices</h2>
+            <p>Track real-time updates on crop prices.</p>
+            <button onclick="showMessage('Market Prices')">View</button>
+        </section>
+        <section class="card">
+            <h2>Weather Updates</h2>
+            <p>Stay ahead with latest weather forecasts.</p>
+            <button onclick="showMessage('Weather')">Check</button>
+        </section>
+    </main>
+
+    <footer class="dashboard-footer">
+        <div class="footer-links">
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <p>©2025 KrishiMitra. All rights reserved.</p>
+    </footer>
+
+    <script src="/javascript/Dashboard.js"></script>
+</body>
+
+</html>
