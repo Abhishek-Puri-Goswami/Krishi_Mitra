@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Cart</title>
+  <link rel="stylesheet" href="../public/stylesheet/AddToCart.css">
+  <link
+        href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins&display=swap"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Martel+Sans:wght@200;300;400;600;700;800;900&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">My Cart</h1>
+
+    <div class="cart-section">
+      <!-- Left: Cart Items -->
+      <div class="cart-items">
+        <h2 class="section-header">Farm Basket (2)</h2>
+        <p class="free-delivery">Pure, local, and freshly packed — no middlemen</p>
+
+        <div class="item" data-id="1">
+          <img src="paddy.jpg" alt="Paddy">
+          <div class="details">
+            <h3>Paddy</h3>
+            <p class="price">₹2800.00 <span class="strike">₹3000.00</span></p>
+            <p class="save">You Save ₹200.00</p>
+            <div class="qty">
+              <button class="decrement">-</button>
+              <span class="quantity">1</span>
+              <button class="increment">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="item" data-id="2">
+          <img src="wheat.jpg" alt="Wheat">
+          <div class="details">
+            <h3>Wheat</h3>
+            <p class="price">₹1400.00 <span class="strike">₹2000.00</span></p>
+            <p class="save">You Save ₹600.00</p>
+            <div class="qty">
+              <button class="decrement">-</button>
+              <span class="quantity">1</span>
+              <button class="increment">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Summary -->
+      <div class="summary">
+        <h3>Payment Details</h3>
+        <div class="summary-line"><span>MRP Total</span><span id="mrp-total">₹5000.00</span></div>
+        <div class="summary-line green"><span>Product Discount</span><span id="discount">- ₹800.00</span></div>
+        <div class="summary-line green"><span>Delivery Fee (Quick)</span><span>FREE</span></div>
+        <div class="summary-line total"><span>Total</span><span id="total">₹4200.00</span></div>
+        <p class="you-saved">You Saved ₹800.00</p>
+        <button class="place-order">Place Order</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../public/javascript/AddToCart.js"></script>
+</body>
+</html>
