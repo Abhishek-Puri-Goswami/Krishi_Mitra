@@ -1,0 +1,168 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+.dashboard-header {
+    padding: 1rem 2rem;
+    background-color: #dfdfdf;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 0.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    padding: 0.5rem 0.3rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #4a4a4a;
+    background-color: white;
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    right: 0;
+    font-weight: 700;
+    background-color: #dfdfdf;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 150px;
+    z-index: 10;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: black;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f3f3f3;
+}
+
+.dashboard-main {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 2rem;
+}
+
+.card {
+    background-color: #dfdfdf;
+    border-radius: 10px;
+
+    padding: 2rem;
+    margin: 1rem;
+    text-align: center;
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0.3rem 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+}
+
+.card h2 {
+    color: black;
+}
+
+.card button {
+    background-color: #2f8f46;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.card button:hover {
+    background-color: #256d37;
+}
+
+.dashboard-footer {
+    flex-shrink: 0;
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #dfdfdf;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+}
