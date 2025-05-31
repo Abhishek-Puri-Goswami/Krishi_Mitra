@@ -4,18 +4,19 @@ let user = require("../models/user");
 const bcrypt = require("bcrypt");
 
 module.exports.register = async (req, res) => {
-  try {
-    let imageUrl = "";
+    try{
+        let imageUrl = '';
+ 
+     if (req.file) {
+       // Upload to Cloudinary
+       const result = await cloudinary.uploader.upload(req.file.path, {
+         folder: 'aadhar image'
+       });
+ 
+       imageUrl = result.secure_url;
+  
+       fs.unlinkSync(req.file.path);
 
-    if (req.file) {
-      // Upload to Cloudinary
-      const result = await cloudinary.uploader.upload(req.file.path, {
-        folder: "aadhar image",
-      });
-
-      imageUrl = result.secure_url;
-      console.log("Image URL:", imageUrl);
-      fs.unlinkSync(req.file.path);
 
       const hashedPassword = await bcrypt.hash(req.body.password, 10);
       console.log(hashedPassword);

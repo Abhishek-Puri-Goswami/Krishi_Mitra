@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 // OTP generator
 function generateOTP() {
-  return Math.floor(1000 + Math.random() * 9000);
+  return Math.floor(100000 + Math.random() * 900000);
 }
 
 // Mail transporter
@@ -20,19 +20,30 @@ const transporter = nodemailer.createTransport({
 
 // OTP sender function
 module.exports.otp = async (req, res) => {
+  
+  let email= req.body.email;
   try {
+
+    let user = await userModel.findOne({ email: email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
     const otp = generateOTP();
+    console.log("Generated OTP:", otp);
+    user.otp=otp;
+    user.save();
 
     const mailOptions = {
       from: {
         name: 'KrishiMitra',
         address: 'krishimitra.team@gmail.com',
       },
-      to: 'srivastwaadarsh@gmail.com', 
-      subject: 'Your Password Reset Code',
+      to: email, 
+      subject: 'Reset Password',
       html: `
         <h2>Password Reset Request</h2>
-        <p>We received a request to reset your password. Use the code below to proceed:</p>
+        <p>We received a request to reset your password. Use the Otp below to proceed:</p>
         <h1 style="color: #2c3e50; font-size: 28px; letter-spacing: 2px;">${otp}</h1>
         <p>If you didn’t request a password reset, you can safely ignore this message.</p>
         <p>Need help? <a href="mailto:krishimitra.team@gmail.com">Contact Support</a></p>
@@ -44,8 +55,7 @@ module.exports.otp = async (req, res) => {
         console.error("Error sending OTP:", error);
         return res.status(500).json({ message: 'Error sending OTP', error: error.message });
       }
-      console.log("OTP sent successfully:")
-      return res.status(200).json({ message: 'OTP sent successfully' });
+      res.render("Forgot_Password.ejs")
     });
 
   } catch (error) {

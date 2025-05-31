@@ -6,6 +6,7 @@ const OTP = require("../controllers/otp");
 const multer = require("multer");
 const fs = require("fs");
 const upload = require("../middlewares/Multer");
+let verify=require("../controllers/verify")
 
 router.get("/signup", (req, res) => {
   res.render("SignUp.ejs");
@@ -24,5 +25,7 @@ router.get("/otp", (req, res) => {
 });
 
 router.post("/otp", OTP.otp);
+
+router.post("/verify",verify.Verify);
 
 module.exports = router;
