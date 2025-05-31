@@ -31,6 +31,8 @@ module.exports.otp = async (req, res) => {
 
     const otp = generateOTP();
     console.log("Generated OTP:", otp);
+    user.otp=otp;
+    user.save();
 
     const mailOptions = {
       from: {
