@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 
 // OTP generator
 function generateOTP() {
-  return Math.floor(1000 + Math.random() * 9000);
+  return Math.floor(100000 + Math.random() * 900000);
 }
 
 // Mail transporter
@@ -20,15 +20,24 @@ const transporter = nodemailer.createTransport({
 
 // OTP sender function
 module.exports.otp = async (req, res) => {
+  
+  let email= req.body.email;
   try {
+
+    let user = await userModel.findOne({ email: email });
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
     const otp = generateOTP();
+    console.log("Generated OTP:", otp);
 
     const mailOptions = {
       from: {
         name: 'KrishiMitra',
         address: 'krishimitra.team@gmail.com',
       },
-      to: 'srivastwaadarsh@gmail.com', 
+      to: email, 
       subject: 'Reset Password',
       html: `
         <h2>Password Reset Request</h2>

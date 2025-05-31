@@ -5,7 +5,7 @@ const Product = require("../controllers/product");
 const upload = require("../middlewares/Multer");
 
 router.get("/new", (req, res) => {
-  console.log(">>> Rendering Sell_Product.ejs");
+  console.log("Rendering Sell_Product.ejs");
   res.render("Sell_Product.ejs");
 });
 
