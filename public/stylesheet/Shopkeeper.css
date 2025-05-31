@@ -58,31 +58,8 @@ textarea {
     border-radius: 10px;
 }
 
-input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-#deliveryOptions {
-    padding-left: 30px;
-    margin-bottom: 5px;
-}
-
 textarea {
     resize: vertical;
-}
-
-#imagePreview {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-#imagePreview img {
-    width: 150px;
-    height: auto;
-    object-fit: scale-down;
-    margin-right: 10px;
-    margin-bottom: 10px;
 }
 
 .hidden {

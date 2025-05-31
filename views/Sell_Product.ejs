@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KrishiMitra</title>
-    <link rel="stylesheet" href="stylesheet/Sell_Product.css">
+    <link rel="stylesheet" href="/stylesheet/Sell_Product.css">
 </head>
 
 <body>
@@ -16,7 +16,7 @@
             <button onclick="goBack()">← Back</button>
         </header>
 
-        <form id="productForm">
+        <form id="productForm" action="/product/upload" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="productName">Product Name:</label>
                 <input type="text" id="productName" name="name" placeholder="e.g., Organic Tomatoes" required>
@@ -100,10 +100,10 @@
 
             <div class="form-group">
                 <label for="specialNotes">Special Notes:</label>
-                <textarea id="specialNotes" placeholder="Any additional information..."></textarea>
+                <textarea id="specialNotes" name="specialNotes" placeholder="Any additional information..."></textarea>
             </div>
 
-            <button type="submit">Submit Product</button>
+            <button type="submit" id="submitProduct">Submit Product</button>
         </form>
 
         <div id="confirmationMessage" class="hidden">
@@ -113,7 +113,7 @@
         </div>
     </div>
 
-    <script src="javascript/Sell_Product.js"></script>
+    <script src="/javascript/Sell_Product.js"></script>
 </body>
 
 </html>

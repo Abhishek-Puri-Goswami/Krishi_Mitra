@@ -1,7 +1,7 @@
-const cloudinary = require('../config/cloudinary');
-const fs = require('fs');
-let user = require('../models/user');
-const bcrypt = require('bcrypt');
+const cloudinary = require("../config/cloudinary");
+const fs = require("fs");
+let user = require("../models/user");
+const bcrypt = require("bcrypt");
 
 module.exports.register = async (req, res) => {
     try{
@@ -17,11 +17,11 @@ module.exports.register = async (req, res) => {
   
        fs.unlinkSync(req.file.path);
 
-       const hashedPassword = await bcrypt.hash(req.body.password, 10);
-       console.log(hashedPassword);
-       
 
-       let Users= new user({
+      const hashedPassword = await bcrypt.hash(req.body.password, 10);
+      console.log(hashedPassword);
+
+      let Users = new user({
         username: req.body.name,
         email: req.body.email,
         phone: req.body.phone,
@@ -30,16 +30,15 @@ module.exports.register = async (req, res) => {
         role: req.body.role,
         aadharImg: imageUrl,
         password: hashedPassword,
-    }); 
+      });
 
-    Users.save();
-      
+      await Users.save();
     }
-}catch (error) {
-        console.error('Error adding temple:', error);
-        res.status(500).json({
-          message: 'Failed to add temple',
-          error: error.message
-        });
-      }
-}
+  } catch (error) {
+    console.error("Error adding temple:", error);
+    res.status(500).json({
+      message: "Failed to add temple",
+      error: error.message,
+    });
+  }
+};

@@ -1,18 +1,28 @@
-let express=require("express");
-let router=express.Router();
-let Reg=require("../controllers/register");
-let Login=require("../controllers/login");
-const OTP=require("../controllers/otp");
+let express = require("express");
+let router = express.Router();
+let Reg = require("../controllers/register");
+let Login = require("../controllers/login");
+const OTP = require("../controllers/otp");
 const multer = require("multer");
 const fs = require("fs");
-const upload = require('../middlewares/Multer');
+const upload = require("../middlewares/Multer");
 
+router.get("/signup", (req, res) => {
+  res.render("SignUp.ejs");
+});
 
+router.post("/signup", upload.single("aadharImg"), Reg.register);
 
-router.post("/signup", upload.single("aadharImg"),Reg.register);
+router.get("/login", (req, res) => {
+  res.render("login.ejs");
+});
 
-router.post("/login",Login.login);
+router.post("/login", Login.login);
 
-router.post("/otp",OTP.otp);
+router.get("/otp", (req, res) => {
+  res.render("Forgot_Password.ejs");
+});
 
-module.exports=router;
+router.post("/otp", OTP.otp);
+
+module.exports = router;

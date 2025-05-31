@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FarmChat</title>
+  <link rel="stylesheet" href="/stylesheet/webChat.css" />
+</head>
+<body>
+   <div class="container">
+        <div class="header">
+            <img src="/images/pp.png" alt="David">
+            <div class="info">
+                <div><strong>David</strong></div>
+                <div>Farmer</div>
+            </div>
+        </div>
+        <div class="product-info">
+            Product: Organic Apples <br>
+            Quantity: 500g <br>
+            Original Price: $2.00/kg <br>
+            Negotiated Price: $1.80/kg
+        </div>
+        <div class="chat-box" id="chatBox">
+            <div class="message left">Hi David, I saw that listing for organic apples. Sounds reasonable.</div>
+            <div class="message right">Hi, Thank you for connecting with us.</div>
+            <div class="message right">I can send sample of the product.</div>
+            <div class="message left">Great!</div>
+        </div>
+        <div class="chat-footer">
+            <div class="footer-actions">
+               <label for="fileUpload" class="icon-label">
+                 <img src="/images/attach-document.png" alt="Attach" class="attach-icon">
+               </label>
+               <textarea placeholder="Type a message..." id="messageInput"></textarea>
+               <input type="file" id="fileUpload">
+               <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <div class="finalize">Finalize Deal</div>
+    </div>
+
+    <script src="/javascript/webChat.js"></script>
+</body>
+</html>
