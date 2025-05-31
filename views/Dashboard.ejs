@@ -2,29 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KrishiMitra Dashboard</title>
-    <link rel="stylesheet" href="/stylesheet/Dashboard.css">
+    <link rel="stylesheet" href="/stylesheet/Dashboard.css" />
 </head>
 
-<body>
+<!-- SET THIS USING EJS IN BACKEND -->
+<!-- ROLES: Farmer / Shopkeeper / Buyer => only these are valid -->
+
+<body data-role="Farmer">
+    <!-- <body data-role="Shopkeeper"> -->
+    <!-- <body data-role="Buyer"> -->
+
     <header class="dashboard-header">
         <div class="header-container">
             <div class="logo">
-                <h1>KrishiMitra</h1>
+                <div class="logo-section">
+                    <img src="images/Logo.png" alt="KrishiMitra Logo" class="logo-img">
+                    <h1>KrishiMitra</h1>
+                </div>
             </div>
-            <ul class="nav-links">
-                <li><a href="/">Home</a></li>
-                <li><a href="#">Advisory</a></li>
-                <li><a href="#">Market Prices</a></li>
-                <li><a href="#">Weather</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Cart</a></li>
-            </ul>
             <div class="profile-section">
-                <img src="/images/Logo.png" alt="Profile" class="profile-pic" id="profileToggle">
+                <img src="/images/Logo.png" alt="Profile" class="profile-pic" id="profileToggle" />
                 <div class="profile-dropdown" id="profileDropdown">
                     <button class="dropdown-toggle" id="profileToggleBtn">Farmer Name ⌄</button>
                     <div class="dropdown-menu" id="dropdownMenu">
@@ -34,26 +34,44 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </header>
 
-
     <main class="dashboard-main">
-        <section class="card">
-            <h2>Crop Advisory</h2>
-            <p>Get personalized crop suggestions and tips.</p>
-            <button onclick="showMessage('Advisory')">Explore</button>
+        <section class="card card-sell">
+            <h2>Sell Product</h2>
+            <p>List your crops or goods for sale.</p>
+            <button onclick="showMessage('Sell Product')">Sell</button>
         </section>
-        <section class="card">
-            <h2>Live Market Prices</h2>
-            <p>Track real-time updates on crop prices.</p>
-            <button onclick="showMessage('Market Prices')">View</button>
+
+        <section class="card card-buy">
+            <h2>Buy Product</h2>
+            <p>Purchase agricultural products or tools.</p>
+            <button onclick="showMessage('Buy Product')">Buy</button>
         </section>
-        <section class="card">
-            <h2>Weather Updates</h2>
-            <p>Stay ahead with latest weather forecasts.</p>
+
+        <section class="card card-weather">
+            <h2>Weather</h2>
+            <p>Get real-time weather updates.</p>
             <button onclick="showMessage('Weather')">Check</button>
+        </section>
+
+        <section class="card card-suggestions">
+            <h2>Product Suggestions</h2>
+            <p>Receive crop or market recommendations.</p>
+            <button onclick="showMessage('Suggestions')">View</button>
+        </section>
+
+        <section class="card card-history">
+            <h2>History</h2>
+            <p>Review your buying and selling records.</p>
+            <button onclick="showMessage('History')">View</button>
+        </section>
+
+        <section class="card card-chat">
+            <h2>Chat</h2>
+            <p>Communicate instantly to negotiate, ask questions, or make deals.</p>
+            <button onclick="showMessage('Chat')">Open Chat</button>
         </section>
     </main>
 
