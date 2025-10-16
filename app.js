@@ -7,7 +7,7 @@ let Register = require("./routes/register");
 let pages = require("./routes/pages");
 let Product = require("./routes/product");
 
-dotenv.config();
+dotenv.config(); 
 
 db();
 
